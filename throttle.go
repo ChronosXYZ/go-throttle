@@ -21,7 +21,7 @@ func NewThrottle(ctx context.Context, cfg *Config) *Throttle {
 	if cfg == nil {
 		cfg = &Config{
 			NumTokens:   0,
-			Delay:       0.001,
+			Delay:       1 * time.Millisecond,
 			RefillRate:  0.001,
 			DefaultCost: 1.000,
 			Capacity:    1.000,
