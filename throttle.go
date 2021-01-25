@@ -96,7 +96,7 @@ func (t *Throttle) Take(rateLimit time.Duration, cost float64) rxgo.Observable {
 	if rateLimit == 0 {
 		t.config.RefillRate = 0
 	} else {
-		t.config.RefillRate = float64(1 / rateLimit.Nanoseconds())
+		t.config.RefillRate = 1.0 / float64(rateLimit.Nanoseconds())
 	}
 	return rxgo.FromChannel(ch)
 }
