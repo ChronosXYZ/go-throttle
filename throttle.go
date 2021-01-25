@@ -28,13 +28,15 @@ func NewThrottle(ctx context.Context, cfg *Config) *Throttle {
 		}
 	}
 
-	return &Throttle{
+	t := &Throttle{
 		lastTimestamp: -1,
 		queueChan: make(chan *req, cfg.MaxCapacity),
 		config: *cfg,
 		running: false,
 		ctx: ctx,
 	}
+	t.run()
+	return t
 }
 
 func (t *Throttle) run() {
