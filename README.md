@@ -1,6 +1,6 @@
 # go-throttle
 
-The Go library for throttling some actions, for example, API requests to some network service.
+The Go library for throttling some actions, for example, API requests to some network service. Inspired by [CCXT's throttle.js library](https://github.com/ccxt/ccxt/blob/master/js/base/functions/throttle.js).
 
 ## Install
 
